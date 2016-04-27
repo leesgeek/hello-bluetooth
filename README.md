@@ -1,6 +1,6 @@
 # Hello Bluetooth
 
-This is a simple swift app that demonstrates very basic bi-directional communicate with an Arduino via bluetooth. It is designed to work out-of-the-box with an [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101) running the `ButtonLED` example project.
+This is a simple swift app that demonstrates very basic bi-directional communication with an Arduino via bluetooth. It is designed to work out-of-the-box with an [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101) running the `ButtonLED` example project.
 
 You can read more about this project [on my medium post](https://medium.com/@nebsp/hello-bluetooth-a-simple-swift-app-for-communicating-with-an-arduino-bbf26e089999).  
 
