@@ -23,40 +23,40 @@ class SimpleBluetoothIO: NSObject {
     }
 
     func writeValue(value: Int8) {
-        guard let peripheral = connectedPeripheral, characteristic = writableCharacteristic else {
+        guard let peripheral = connectedPeripheral, let characteristic = writableCharacteristic else {
             return
         }
 
-        let data = NSData.dataWithValue(value)
-        peripheral.writeValue(data, forCharacteristic: characteristic, type: .WithResponse)
+        let data = Data.dataWithValue(value: value)
+        peripheral.writeValue(data, for: characteristic, type: .withResponse)
     }
 
 }
 
 extension SimpleBluetoothIO: CBCentralManagerDelegate {
-    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
+    func centralManager(central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         peripheral.discoverServices(nil)
     }
 
-    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         connectedPeripheral = peripheral
 
         if let connectedPeripheral = connectedPeripheral {
             connectedPeripheral.delegate = self
-            centralManager.connectPeripheral(connectedPeripheral, options: nil)
+            centralManager.connect(connectedPeripheral, options: nil)
         }
         centralManager.stopScan()
     }
 
-    func centralManagerDidUpdateState(central: CBCentralManager) {
-        if central.state == .PoweredOn {
-            centralManager.scanForPeripheralsWithServices([CBUUID(string: serviceUUID)], options: nil)
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if central.state == .poweredOn {
+            centralManager.scanForPeripherals(withServices: [CBUUID(string: serviceUUID)], options: nil)
         }
     }
 }
 
 extension SimpleBluetoothIO: CBPeripheralDelegate {
-    func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         guard let services = peripheral.services else {
             return
         }
@@ -64,28 +64,28 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
         targetService = services.first
         if let service = services.first {
             targetService = service
-            peripheral.discoverCharacteristics(nil, forService: service)
+            peripheral.discoverCharacteristics(nil, for: service)
         }
     }
 
-    func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         guard let characteristics = service.characteristics else {
             return
         }
 
         for characteristic in characteristics {
-            if characteristic.properties.contains(.Write) || characteristic.properties.contains(.WriteWithoutResponse) {
+            if characteristic.properties.contains(.write) || characteristic.properties.contains(.writeWithoutResponse) {
                 writableCharacteristic = characteristic
             }
-            peripheral.setNotifyValue(true, forCharacteristic: characteristic)
+            peripheral.setNotifyValue(true, for: characteristic)
         }
     }
 
-    func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         guard let data = characteristic.value, let delegate = delegate else {
             return
         }
 
-        delegate.simpleBluetoothIO(self, didReceiveValue: data.int8Value())
+        delegate.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.int8Value())
     }
 }

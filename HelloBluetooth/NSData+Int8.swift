@@ -1,16 +1,12 @@
 import Foundation
 
-extension NSData {
-
-    static func dataWithValue<T>(value: T) -> NSData {
+extension Data {
+    static func dataWithValue(value: Int8) -> Data {
         var variableValue = value
-        return NSData(bytes: &variableValue, length: sizeof(T))
+        return Data(buffer: UnsafeBufferPointer(start: &variableValue, count: 1))
     }
 
     func int8Value() -> Int8 {
-        var value: Int8 = 0
-        getBytes(&value, length: sizeof(Int8))
-        return value
+        return Int8(bitPattern: self[0])
     }
-
 }
