@@ -34,7 +34,7 @@ class SimpleBluetoothIO: NSObject {
 }
 
 extension SimpleBluetoothIO: CBCentralManagerDelegate {
-    func centralManager(central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         peripheral.discoverServices(nil)
     }
 
