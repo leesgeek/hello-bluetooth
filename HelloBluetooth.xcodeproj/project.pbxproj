@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D11CB12202821A8003C479F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11CB11202821A8003C479F /* AppDelegate.swift */; };
+		1D11CB14202821A8003C479F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D11CB13202821A8003C479F /* Assets.xcassets */; };
+		1D11CB17202821A8003C479F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D11CB15202821A8003C479F /* MainMenu.xib */; };
+		1D11CB1F20282651003C479F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11CB1D20282651003C479F /* ViewController.swift */; };
+		1D11CB21202830DA003C479F /* SimpleBluetoothIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F206F1C96329A00B6600F /* SimpleBluetoothIO.swift */; };
+		1D11CB22202830DF003C479F /* NSData+Int8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F20711C96363C00B6600F /* NSData+Int8.swift */; };
 		80106FA41C94CDA500B5BB19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80106FA31C94CDA500B5BB19 /* AppDelegate.swift */; };
 		80106FA61C94CDA500B5BB19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80106FA51C94CDA500B5BB19 /* ViewController.swift */; };
 		80106FAB1C94CDA500B5BB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80106FAA1C94CDA500B5BB19 /* Assets.xcassets */; };
@@ -17,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D11CB0F202821A8003C479F /* HelloBluetoothMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloBluetoothMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D11CB11202821A8003C479F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D11CB13202821A8003C479F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D11CB16202821A8003C479F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1D11CB18202821A8003C479F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D11CB19202821A8003C479F /* HelloBluetoothMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloBluetoothMac.entitlements; sourceTree = "<group>"; };
+		1D11CB1D20282651003C479F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80106FA01C94CDA500B5BB19 /* HelloBluetooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloBluetooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80106FA31C94CDA500B5BB19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80106FA51C94CDA500B5BB19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +42,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1D11CB0C202821A8003C479F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80106F9D1C94CDA400B5BB19 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +59,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D11CB10202821A8003C479F /* HelloBluetoothMac */ = {
+			isa = PBXGroup;
+			children = (
+				1D11CB11202821A8003C479F /* AppDelegate.swift */,
+				1D11CB1D20282651003C479F /* ViewController.swift */,
+				1D11CB13202821A8003C479F /* Assets.xcassets */,
+				1D11CB15202821A8003C479F /* MainMenu.xib */,
+				1D11CB18202821A8003C479F /* Info.plist */,
+				1D11CB19202821A8003C479F /* HelloBluetoothMac.entitlements */,
+			);
+			path = HelloBluetoothMac;
+			sourceTree = "<group>";
+		};
 		80106F971C94CDA400B5BB19 = {
 			isa = PBXGroup;
 			children = (
 				80106FA21C94CDA500B5BB19 /* HelloBluetooth */,
+				1D11CB10202821A8003C479F /* HelloBluetoothMac */,
 				80106FA11C94CDA500B5BB19 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				80106FA01C94CDA500B5BB19 /* HelloBluetooth.app */,
+				1D11CB0F202821A8003C479F /* HelloBluetoothMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +108,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1D11CB0E202821A8003C479F /* HelloBluetoothMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D11CB1C202821A8003C479F /* Build configuration list for PBXNativeTarget "HelloBluetoothMac" */;
+			buildPhases = (
+				1D11CB0B202821A8003C479F /* Sources */,
+				1D11CB0C202821A8003C479F /* Frameworks */,
+				1D11CB0D202821A8003C479F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloBluetoothMac;
+			productName = HelloBluetoothMac;
+			productReference = 1D11CB0F202821A8003C479F /* HelloBluetoothMac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		80106F9F1C94CDA400B5BB19 /* HelloBluetooth */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80106FB21C94CDA500B5BB19 /* Build configuration list for PBXNativeTarget "HelloBluetooth" */;
@@ -96,10 +148,14 @@
 		80106F981C94CDA400B5BB19 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Nebojsa Petrovic";
 				TargetAttributes = {
+					1D11CB0E202821A8003C479F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					80106F9F1C94CDA400B5BB19 = {
 						CreatedOnToolsVersion = 7.2.1;
 						LastSwiftMigration = 0920;
@@ -120,11 +176,21 @@
 			projectRoot = "";
 			targets = (
 				80106F9F1C94CDA400B5BB19 /* HelloBluetooth */,
+				1D11CB0E202821A8003C479F /* HelloBluetoothMac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1D11CB0D202821A8003C479F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D11CB14202821A8003C479F /* Assets.xcassets in Resources */,
+				1D11CB17202821A8003C479F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80106F9E1C94CDA400B5BB19 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,6 +204,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1D11CB0B202821A8003C479F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D11CB21202830DA003C479F /* SimpleBluetoothIO.swift in Sources */,
+				1D11CB22202830DF003C479F /* NSData+Int8.swift in Sources */,
+				1D11CB1F20282651003C479F /* ViewController.swift in Sources */,
+				1D11CB12202821A8003C479F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80106F9C1C94CDA400B5BB19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,7 +228,67 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		1D11CB15202821A8003C479F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D11CB16202821A8003C479F /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		1D11CB1A202821A8003C479F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = HelloBluetoothMac/HelloBluetoothMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = HelloBluetoothMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasderraugh.HelloBluetoothMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		1D11CB1B202821A8003C479F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = HelloBluetoothMac/HelloBluetoothMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = HelloBluetoothMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasderraugh.HelloBluetoothMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		80106FB01C94CDA500B5BB19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -279,6 +416,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D11CB1C202821A8003C479F /* Build configuration list for PBXNativeTarget "HelloBluetoothMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D11CB1A202821A8003C479F /* Debug */,
+				1D11CB1B202821A8003C479F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		80106F9B1C94CDA400B5BB19 /* Build configuration list for PBXProject "HelloBluetooth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
